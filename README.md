@@ -160,7 +160,7 @@ cache capacity 1, 1000000 get operations (mostly key not found) took 5.08 millis
 
 ## Extra Testing
 
-A bash script is provided to test your *cachefree*() function. The bash script utilizes a tool called valgrind to test if your memory is correctly released, if not, valgrind will report memory leaks. valgrind eventually will call lru-test6, thus before running this script, you need to run *make* so as to compile lru-test6.c and generate lru-test6. Once it is generated, the expected results are like the following:
+A bash script called *runval.sh* is provided to test your *cachefree*() function. The bash script utilizes a tool called valgrind to test if your memory is correctly released, if not, valgrind will report memory leaks. valgrind eventually will call lru-test6, thus before running this script, you need to run *make* so as to compile lru-test6.c and generate lru-test6. Once it is generated, the expected results are like the following:
 
 ```console
 (base) [jidongxiao@onyx lru]$ ./runval.sh 
