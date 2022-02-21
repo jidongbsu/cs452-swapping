@@ -89,7 +89,7 @@ We define *LRUCache* to represent the entire cache we need to manage. To achieve
 
 - **size**. The *size* field in the LRUCache struct tells us the current size of the cache, i.e., how many entries are existing in the cache. At first, *size* is 0. Any time you call *put*() to add an entry to the cache, you increment *size* by 1. If the *put*() function just updates the vaule of an existing entry, then you should NOT increment size. When eviction is happening, you may or may not want to decrement *size* by 1 - depending on how you implement your *put*() function. Your *get*() function should not change the *size* of the cache, as *get*() is just reading information from the cache.
 
-We define the struct *myListNode* to represent each entry in the doubly linked list.
+We define the struct *myListNode* to represent each node in the doubly linked list, once again, each node represents one entry in the cache.
 
 ## APIs and Helper Code
 
