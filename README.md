@@ -209,7 +209,7 @@ Grade:  /100
 	- lru-test6 produces correct results - /10
 	- O(1) time complexity - you get the pts if you lru-test7 produce similar results as the provided results. - /15
 - [5 pts] Valgrind reports no memory leaks or errors:
-	- As reported by runval.sh
+	- As reported by *runval.sh*.
 	- This is a PASS/FAIL score. 1 error or leaking 1 byte will result in a zero for this section. There is no partial credit for this section.
 - [20 pts] Extra Credits:
 	- You get 20 extra pts if your program passes all the test cases on Leetcode, see Leetcode problem 146. Note, you need to provide a screenshot in your submission to prove you have passed all the test cases on Leetcode. You will not get these extra points if such a screenshot is not included in your submission.
