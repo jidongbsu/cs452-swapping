@@ -54,7 +54,7 @@ int lRUCacheGet(LRUCache* obj, int key);
 
 Users call this function to get the entry which matches with the *key*. If such an entry does not exist, return -1. This README file also refers to this function as the *get*() function.
 
-```
+```c
 void lRUCacheFree(LRUCache* obj);
 ```
 
