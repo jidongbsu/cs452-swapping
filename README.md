@@ -1,6 +1,6 @@
 ## Overview
 
-In this assignment we will implement a least recently used (LRU) policy, a commonly used policy in OS to manage the swap space, as well as manage cache. Your algorithm must be in an amortized O(1) time complexity. Note this is NOT a kernel project, and you should just develop your code on onyx, not in your virtual machine. Submissions fail to compile or run on onyx, will not be graded.
+In this assignment we will implement a least recently used (LRU) policy, a commonly used page replacement policy in OS to manage physical memory (i.e., swapping pages in and out of the physical memory), as well as manage cache (e.g., the TLB cache). Your algorithm must be in an amortized O(1) time complexity. Note this is NOT a kernel project, and you should just develop your code on onyx, not in your virtual machine. Submissions fail to compile or run on onyx, will not be graded.
 
 ## Learning Objectives
 
@@ -47,6 +47,8 @@ void LRUCachePut(LRUCache* obj, int key, int value);
 ```
 
 Users call this function to add an entry to the cache. An entry is represented by a *key-value* pair. If the key exists, then update its corresponding value. If the number of keys exceeds the capacity of cache, then evict the least recently used (LRU) entry first, before you add the new entry. This README file also refers to this function as the *put*() function.
+
+Note: if you want to have a better understanding of what a real entry looks like in a real cache, you can read the book chapter 19.4, 19.5, 19.6 and 19.7. In the chapter's context, **VPN** is the *key*, and **PFN** is the *value*.
 
 ```c
 int LRUCacheGet(LRUCache* obj, int key);
