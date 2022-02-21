@@ -126,37 +126,37 @@ When running lru-test7, which tests the time complexity of your algorithm, you a
 
 ```console
 (base) [jidongxiao@onyx lru]$ ./lru-test7
-cache size 10000, 1000000 put operations (mostly existing key) took 16.40 milliseconds.
-cache size 10000, 1000000 get operations (mostly key exists) took 11.67 milliseconds.
-cache size 8000, 1000000 put operations (mostly existing key) took 16.39 milliseconds.
-cache size 8000, 1000000 get operations (mostly key exists) took 11.22 milliseconds.
-cache size 4000, 1000000 put operations (mostly existing key) took 16.40 milliseconds.
-cache size 4000, 1000000 get operations (mostly key exists) took 11.24 milliseconds.
-cache size 3000, 1000000 put operations (mostly existing key) took 16.90 milliseconds.
-cache size 3000, 1000000 get operations (mostly key exists) took 11.66 milliseconds.
-cache size 2000, 1000000 put operations (mostly existing key) took 16.46 milliseconds.
-cache size 2000, 1000000 get operations (mostly key exists) took 11.24 milliseconds.
-cache size 1000, 1000000 put operations (mostly existing key) took 16.39 milliseconds.
-cache size 1000, 1000000 get operations (mostly key exists) took 11.25 milliseconds.
+cache capacity 10000, 1000000 put operations (mostly existing key) took 16.40 milliseconds.
+cache capacity 10000, 1000000 get operations (mostly key exists) took 11.67 milliseconds.
+cache capacity 8000, 1000000 put operations (mostly existing key) took 16.39 milliseconds.
+cache capacity 8000, 1000000 get operations (mostly key exists) took 11.22 milliseconds.
+cache capacity 4000, 1000000 put operations (mostly existing key) took 16.40 milliseconds.
+cache capacity 4000, 1000000 get operations (mostly key exists) took 11.24 milliseconds.
+cache capacity 3000, 1000000 put operations (mostly existing key) took 16.90 milliseconds.
+cache capacity 3000, 1000000 get operations (mostly key exists) took 11.66 milliseconds.
+cache capacity 2000, 1000000 put operations (mostly existing key) took 16.46 milliseconds.
+cache capacity 2000, 1000000 get operations (mostly key exists) took 11.24 milliseconds.
+cache capacity 1000, 1000000 put operations (mostly existing key) took 16.39 milliseconds.
+cache capacity 1000, 1000000 get operations (mostly key exists) took 11.25 milliseconds.
 
-cache size 100, 1000000 put operations (mostly new key) took 31.07 milliseconds.
-cache size 100, 1000000 get operations (mostly key not found) took 5.07 milliseconds.
-cache size 10, 1000000 put operations (mostly new key) took 31.18 milliseconds.
-cache size 10, 1000000 get operations (mostly key not found) took 5.05 milliseconds.
-cache size 3, 1000000 put operations (mostly new key) took 31.27 milliseconds.
-cache size 3, 1000000 get operations (mostly key not found) took 5.06 milliseconds.
-cache size 2, 1000000 put operations (mostly new key) took 31.11 milliseconds.
-cache size 2, 1000000 get operations (mostly key not found) took 5.06 milliseconds.
-cache size 1, 1000000 put operations (mostly new key) took 11.11 milliseconds.
-cache size 1, 1000000 get operations (mostly key not found) took 5.08 milliseconds.
+cache capacity 100, 1000000 put operations (mostly new key) took 31.07 milliseconds.
+cache capacity 100, 1000000 get operations (mostly key not found) took 5.07 milliseconds.
+cache capacity 10, 1000000 put operations (mostly new key) took 31.18 milliseconds.
+cache capacity 10, 1000000 get operations (mostly key not found) took 5.05 milliseconds.
+cache capacity 3, 1000000 put operations (mostly new key) took 31.27 milliseconds.
+cache capacity 3, 1000000 get operations (mostly key not found) took 5.06 milliseconds.
+cache capacity 2, 1000000 put operations (mostly new key) took 31.11 milliseconds.
+cache capacity 2, 1000000 get operations (mostly key not found) took 5.06 milliseconds.
+cache capacity 1, 1000000 put operations (mostly new key) took 11.11 milliseconds.
+cache capacity 1, 1000000 get operations (mostly key not found) took 5.08 milliseconds.
 ```
 
-- For cache size 10000, 8000, 4000, 3000, 2000, 1000, calling your *put*() function (1,000,000 times) should take approximately the same amount of time.
-- For cache size 100, 10, 3, 2, calling your *put*() function (1,000,000 times) should take approximately the same amount of time. These cases take more time than the above cases, because they mainly deal with new key situations, which may require evicting entries; whereas the above cases mainly deal with existing key situations, which do not require evicting entries.
-- For cache size 1, calling your *put*() function (1,000,000 times) takes less time than the above cases, but cache size 1 is a unique situation, because it does not involve any linked list operations .
+- For cache capacity 10000, 8000, 4000, 3000, 2000, 1000, calling your *put*() function (1,000,000 times) should take approximately the same amount of time.
+- For cache capacity 100, 10, 3, 2, calling your *put*() function (1,000,000 times) should take approximately the same amount of time. These cases take more time than the above cases, because they mainly deal with new key situations, which may require evicting entries; whereas the above cases mainly deal with existing key situations, which do not require evicting entries.
+- For cache capacity 1, calling your *put*() function (1,000,000 times) takes less time than the above cases, but cache capacity 1 is a unique situation, because it does not involve any linked list operations .
 
-- For cache size 10000, 4000, 3000, 2000, 1000, calling your *get*() function (1,000,000 times) should take approximately the same amount of the time.
-- For cache size 100, 10, 3, 2, 1, calling your *get*() function (1,000,000 times) should take approximately the same amount of the time. These cases take less time than the above cases, because they just return -1, but do not change the linked list; whereas the above cases require updating the linked list.
+- For cache capacity 10000, 4000, 3000, 2000, 1000, calling your *get*() function (1,000,000 times) should take approximately the same amount of the time.
+- For cache capacity 100, 10, 3, 2, 1, calling your *get*() function (1,000,000 times) should take approximately the same amount of the time. These cases take less time than the above cases, because they just return -1, but do not change the linked list; whereas the above cases require updating the linked list.
 
 ## Extra Testing
 
