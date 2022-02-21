@@ -99,7 +99,7 @@ There is no helper code provided in this assignment. You probably do not need an
 
 ## Testing
 
-7 testing programs are provided. They are lru-test[1-7].c. Once you run make, you will generate the binary files of these testing programs. lru-test[1-6] tests the correctness of your algorithm, whereas test7 tests the time complexity of your algorithm.
+7 testing programs are provided. They are lru-test[1-7].c. Once you run *make*, you will generate the binary files of these testing programs. lru-test[1-6] tests the correctness of your algorithm, whereas test7 tests the time complexity of your algorithm.
 
 ## Expected Results
 
@@ -160,7 +160,7 @@ cache capacity 1, 1000000 get operations (mostly key not found) took 5.08 millis
 
 ## Extra Testing
 
-A bash script is provided to test your *cachefree*() function. The bash script utilizes a tool called valgrind to test if your memory is correctly released, if not, valgrind will report memory leaks. valgrind eventually will call lru-test6, thus before running this script, you need to run make so as to compile lru-test6.c and generate lru-test6. Once it is generated, the expected results are like the following:
+A bash script is provided to test your *cachefree*() function. The bash script utilizes a tool called valgrind to test if your memory is correctly released, if not, valgrind will report memory leaks. valgrind eventually will call lru-test6, thus before running this script, you need to run *make* so as to compile lru-test6.c and generate lru-test6. Once it is generated, the expected results are like the following:
 
 ```console
 (base) [jidongxiao@onyx lru]$ ./runval.sh 
@@ -191,7 +191,7 @@ Due Date:  03/08/2022, 23:59pm. Late submission will not be accepted/graded.
 
 ## Project Layout
 
-All files necessary for compilation need to be submitted, this includes source code files, header files, and Makefile. The structure of the submission folder should be the same as what was given to you. 
+All files necessary for compilation and testing need to be submitted, this includes source code files, header files, the bash script, and Makefile. The structure of the submission folder should be the same as what was given to you. 
 
 ## Grading Rubric (for Undergraduate Students and Graduate Students)
 
