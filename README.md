@@ -27,7 +27,7 @@ The starter code looks like this:
 
 ```console
 (base) [jidongxiao@onyx cs452-swapping]$ ls
-lru.c  lru.h  lru-test1.c  lru-test2.c  lru-test3.c  lru-test4.c  lru-test5.c  lru-test6.c  lru-test7.c  Makefile  README.md
+lru.c  lru.h  lru-test1.c  lru-test2.c  lru-test3.c  lru-test4.c  lru-test5.c  lru-test6.c  lru-test7.c  Makefile  README.md  runval.sh
 ```
 
 You will be completing the lru.c file. You should not modify the lru.h file.
