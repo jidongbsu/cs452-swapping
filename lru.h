@@ -1,4 +1,3 @@
-
 struct myListNode {
     int key;
     int value;

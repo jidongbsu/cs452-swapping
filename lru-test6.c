@@ -1,13 +1,3 @@
-/**
- * Your LRUCache struct will be instantiated and called as such:
- * LRUCache* obj = lRUCacheCreate(capacity);
- * int param_1 = lRUCacheGet(obj, key);
-
- * lRUCachePut(obj, key, value);
-
- * lRUCacheFree(obj);
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "lru.h"
@@ -21,24 +11,24 @@ int main(int argc, char *argv[])
  lRUCachePut(obj, 3, 3);
  lRUCachePut(obj, 4, 4);
  value = lRUCacheGet(obj, 4);
- printf("what we get from the cache is %d\n", value);
+ printf("what we get from the cache are [%d", value);
  value = lRUCacheGet(obj, 3);
- printf("what we get from the cache is %d\n", value);
+ printf(" %d", value);
  value = lRUCacheGet(obj, 2);
- printf("what we get from the cache is %d\n", value);
+ printf(" %d", value);
  value = lRUCacheGet(obj, 1);
- printf("what we get from the cache is %d\n", value);
+ printf(" %d", value);
  lRUCachePut(obj, 5, 5);
  value = lRUCacheGet(obj, 1);
- printf("what we get from the cache is %d\n", value);
+ printf(" %d", value);
  value = lRUCacheGet(obj, 2);
- printf("what we get from the cache is %d\n", value);
+ printf(" %d", value);
  value = lRUCacheGet(obj, 3);
- printf("what we get from the cache is %d\n", value);
+ printf(" %d", value);
  value = lRUCacheGet(obj, 4);
- printf("what we get from the cache is %d\n", value);
+ printf(" %d", value);
  value = lRUCacheGet(obj, 5);
- printf("what we get from the cache is %d\n", value);
+ printf(" %d]\n", value);
 
  lRUCacheFree(obj);
  return 0;
