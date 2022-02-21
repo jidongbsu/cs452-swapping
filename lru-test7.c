@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
  	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
- printf("cache size 10000, 1000000 put operations (mostly existing key) took %4.2lf milliseconds.\n", computing_time);
+ printf("cache capacity 10000, 1000000 put operations (mostly existing key) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  printf("counter1 is %ld, counter2 is %ld\n", counter1, counter2);
  counter1=0;
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
  	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
- printf("cache size 10000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
+ printf("cache capacity 10000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  printf("counter3 is %ld, counter4 is %ld\n", counter3, counter4);
  counter3=0;
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
  	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
- printf("cache size 8000, 1000000 put operations (mostly existing key) took %4.2lf milliseconds.\n", computing_time);
+ printf("cache capacity 8000, 1000000 put operations (mostly existing key) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  printf("counter1 is %ld, counter2 is %ld\n", counter1, counter2);
  counter1=0;
@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
  	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
- printf("cache size 8000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
+ printf("cache capacity 8000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  printf("counter3 is %ld, counter4 is %ld\n", counter3, counter4);
  counter3=0;
@@ -80,7 +80,7 @@ int main(int argc, char *argv[])
  	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
- //printf("cache size 6000, 1000000 put operations (mostly existing key) took %4.2lf milliseconds.\n", computing_time);
+ //printf("cache capacity 6000, 1000000 put operations (mostly existing key) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  //printf("counter1 is %ld, counter2 is %ld\n", counter1, counter2);
  counter1=0;
@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
  	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
- //printf("cache size 6000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
+ //printf("cache capacity 6000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  //printf("counter3 is %ld, counter4 is %ld\n", counter3, counter4);
  counter3=0;
@@ -106,7 +106,7 @@ int main(int argc, char *argv[])
  	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
- printf("cache size 4000, 1000000 put operations (mostly existing key) took %4.2lf milliseconds.\n", computing_time);
+ printf("cache capacity 4000, 1000000 put operations (mostly existing key) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  printf("counter1 is %ld, counter2 is %ld\n", counter1, counter2);
  counter1=0;
@@ -117,7 +117,7 @@ int main(int argc, char *argv[])
  	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
- printf("cache size 4000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
+ printf("cache capacity 4000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  printf("counter3 is %ld, counter4 is %ld\n", counter3, counter4);
  counter3=0;
@@ -132,7 +132,7 @@ int main(int argc, char *argv[])
  	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
- printf("cache size 3000, 1000000 put operations (mostly existing key) took %4.2lf milliseconds.\n", computing_time);
+ printf("cache capacity 3000, 1000000 put operations (mostly existing key) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  printf("counter1 is %ld, counter2 is %ld\n", counter1, counter2);
  counter1=0;
@@ -143,7 +143,7 @@ int main(int argc, char *argv[])
  	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
- printf("cache size 3000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
+ printf("cache capacity 3000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  printf("counter3 is %ld, counter4 is %ld\n", counter3, counter4);
  counter3=0;
@@ -158,7 +158,7 @@ int main(int argc, char *argv[])
  	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
- printf("cache size 2000, 1000000 put operations (mostly existing key) took %4.2lf milliseconds.\n", computing_time);
+ printf("cache capacity 2000, 1000000 put operations (mostly existing key) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  printf("counter1 is %ld, counter2 is %ld\n", counter1, counter2);
  counter1=0;
@@ -169,7 +169,7 @@ int main(int argc, char *argv[])
  	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
- printf("cache size 2000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
+ printf("cache capacity 2000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  printf("counter3 is %ld, counter4 is %ld\n", counter3, counter4);
  counter3=0;
@@ -184,7 +184,7 @@ int main(int argc, char *argv[])
  	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
- printf("cache size 1000, 1000000 put operations (mostly existing key) took %4.2lf milliseconds.\n", computing_time);
+ printf("cache capacity 1000, 1000000 put operations (mostly existing key) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  printf("counter1 is %ld, counter2 is %ld\n", counter1, counter2);
  counter1=0;
@@ -195,7 +195,7 @@ int main(int argc, char *argv[])
  	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
- printf("cache size 1000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
+ printf("cache capacity 1000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  printf("counter3 is %ld, counter4 is %ld\n", counter3, counter4);
  counter3=0;
@@ -212,7 +212,7 @@ int main(int argc, char *argv[])
  	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
- printf("cache size 100, 1000000 put operations (mostly new key) took %4.2lf milliseconds.\n", computing_time);
+ printf("cache capacity 100, 1000000 put operations (mostly new key) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  printf("counter1 is %ld, counter2 is %ld\n", counter1, counter2);
  counter1=0;
@@ -223,7 +223,7 @@ int main(int argc, char *argv[])
  	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
- printf("cache size 100, 1000000 get operations (mostly key not found) took %4.2lf milliseconds.\n", computing_time);
+ printf("cache capacity 100, 1000000 get operations (mostly key not found) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  printf("counter3 is %ld, counter4 is %ld\n", counter3, counter4);
  counter3=0;
@@ -238,7 +238,7 @@ int main(int argc, char *argv[])
  	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
- printf("cache size 10, 1000000 put operations (mostly new key) took %4.2lf milliseconds.\n", computing_time);
+ printf("cache capacity 10, 1000000 put operations (mostly new key) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  printf("counter1 is %ld, counter2 is %ld\n", counter1, counter2);
  counter1=0;
@@ -249,7 +249,7 @@ int main(int argc, char *argv[])
  	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
- printf("cache size 10, 1000000 get operations (mostly key not found) took %4.2lf milliseconds.\n", computing_time);
+ printf("cache capacity 10, 1000000 get operations (mostly key not found) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  printf("counter3 is %ld, counter4 is %ld\n", counter3, counter4);
  counter3=0;
@@ -264,7 +264,7 @@ int main(int argc, char *argv[])
  	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
- printf("cache size 3, 1000000 put operations (mostly new key) took %4.2lf milliseconds.\n", computing_time);
+ printf("cache capacity 3, 1000000 put operations (mostly new key) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  printf("counter1 is %ld, counter2 is %ld\n", counter1, counter2);
  counter1=0;
@@ -275,7 +275,7 @@ int main(int argc, char *argv[])
  	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
- printf("cache size 3, 1000000 get operations (mostly key not found) took %4.2lf milliseconds.\n", computing_time);
+ printf("cache capacity 3, 1000000 get operations (mostly key not found) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  printf("counter3 is %ld, counter4 is %ld\n", counter3, counter4);
  counter3=0;
@@ -290,7 +290,7 @@ int main(int argc, char *argv[])
  	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
- printf("cache size 2, 1000000 put operations (mostly new key) took %4.2lf milliseconds.\n", computing_time);
+ printf("cache capacity 2, 1000000 put operations (mostly new key) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  printf("counter1 is %ld, counter2 is %ld\n", counter1, counter2);
  counter1=0;
@@ -301,7 +301,7 @@ int main(int argc, char *argv[])
  	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
- printf("cache size 2, 1000000 get operations (mostly key not found) took %4.2lf milliseconds.\n", computing_time);
+ printf("cache capacity 2, 1000000 get operations (mostly key not found) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  printf("counter3 is %ld, counter4 is %ld\n", counter3, counter4);
  counter3=0;
@@ -316,7 +316,7 @@ int main(int argc, char *argv[])
  	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
- printf("cache size 1, 1000000 put operations (mostly new key) took %4.2lf milliseconds.\n", computing_time);
+ printf("cache capacity 1, 1000000 put operations (mostly new key) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  printf("counter1 is %ld, counter2 is %ld\n", counter1, counter2);
  counter1=0;
@@ -327,7 +327,7 @@ int main(int argc, char *argv[])
  	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
- printf("cache size 1, 1000000 get operations (mostly key not found) took %4.2lf milliseconds.\n", computing_time);
+ printf("cache capacity 1, 1000000 get operations (mostly key not found) took %4.2lf milliseconds.\n", computing_time);
  #ifdef DEBUG
  printf("counter3 is %ld, counter4 is %ld\n", counter3, counter4);
  counter3=0;
