@@ -13,10 +13,10 @@ typedef struct {
     struct myListNode *hash[10000];
 } LRUCache;
 
-LRUCache* lRUCacheCreate(int capacity);
+LRUCache* LRUCacheCreate(int capacity);
 
-int lRUCacheGet(LRUCache* obj, int key);
+int LRUCacheGet(LRUCache* obj, int key);
 
-void lRUCachePut(LRUCache* obj, int key, int value);
+void LRUCachePut(LRUCache* obj, int key, int value);
 
-void lRUCacheFree(LRUCache* obj);
+void LRUCacheFree(LRUCache* obj);

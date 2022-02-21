@@ -4,33 +4,33 @@
 
 int main(int argc, char *argv[])
 {
- LRUCache* obj = lRUCacheCreate(3);
+ LRUCache* obj = LRUCacheCreate(3);
  int value;
- lRUCachePut(obj, 1, 1);
- lRUCachePut(obj, 2, 2);
- lRUCachePut(obj, 3, 3);
- lRUCachePut(obj, 4, 4);
- value = lRUCacheGet(obj, 4);
+ LRUCachePut(obj, 1, 1);
+ LRUCachePut(obj, 2, 2);
+ LRUCachePut(obj, 3, 3);
+ LRUCachePut(obj, 4, 4);
+ value = LRUCacheGet(obj, 4);
  printf("what we get from the cache are [%d", value);
- value = lRUCacheGet(obj, 3);
+ value = LRUCacheGet(obj, 3);
  printf(" %d", value);
- value = lRUCacheGet(obj, 2);
+ value = LRUCacheGet(obj, 2);
  printf(" %d", value);
- value = lRUCacheGet(obj, 1);
+ value = LRUCacheGet(obj, 1);
  printf(" %d", value);
- lRUCachePut(obj, 5, 5);
- value = lRUCacheGet(obj, 1);
+ LRUCachePut(obj, 5, 5);
+ value = LRUCacheGet(obj, 1);
  printf(" %d", value);
- value = lRUCacheGet(obj, 2);
+ value = LRUCacheGet(obj, 2);
  printf(" %d", value);
- value = lRUCacheGet(obj, 3);
+ value = LRUCacheGet(obj, 3);
  printf(" %d", value);
- value = lRUCacheGet(obj, 4);
+ value = LRUCacheGet(obj, 4);
  printf(" %d", value);
- value = lRUCacheGet(obj, 5);
+ value = LRUCacheGet(obj, 5);
  printf(" %d]\n", value);
 
- lRUCacheFree(obj);
+ LRUCacheFree(obj);
  return 0;
 }
 

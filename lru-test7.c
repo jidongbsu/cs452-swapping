@@ -20,11 +20,11 @@ int main(int argc, char *argv[])
  double start_time;
  double computing_time;
 
- obj = lRUCacheCreate(10000);
- lRUCachePut(obj, 1, 1);
+ obj = LRUCacheCreate(10000);
+ LRUCachePut(obj, 1, 1);
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	lRUCachePut(obj, (2*i)%1000, i+1);
+ 	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache size 10000, 1000000 put operations (mostly existing key) took %4.2lf milliseconds.\n", computing_time);
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = lRUCacheGet(obj, i%10);
+ 	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache size 10000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
@@ -44,13 +44,13 @@ int main(int argc, char *argv[])
  counter3=0;
  counter4=0;
  #endif
- lRUCacheFree(obj);
+ LRUCacheFree(obj);
 
- obj = lRUCacheCreate(8000);
- lRUCachePut(obj, 1, 1);
+ obj = LRUCacheCreate(8000);
+ LRUCachePut(obj, 1, 1);
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	lRUCachePut(obj, (2*i)%1000, i+1);
+ 	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache size 8000, 1000000 put operations (mostly existing key) took %4.2lf milliseconds.\n", computing_time);
@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = lRUCacheGet(obj, i%10);
+ 	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache size 8000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
@@ -70,14 +70,14 @@ int main(int argc, char *argv[])
  counter3=0;
  counter4=0;
  #endif
- lRUCacheFree(obj);
+ LRUCacheFree(obj);
 
  /* FIXME: it is not clear why 6000 takes more put time than other cases, thus we comment out its printing statements.  */
- obj = lRUCacheCreate(6000);
- lRUCachePut(obj, 1, 1);
+ obj = LRUCacheCreate(6000);
+ LRUCachePut(obj, 1, 1);
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	lRUCachePut(obj, (2*i)%1000, i+1);
+ 	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
  //printf("cache size 6000, 1000000 put operations (mostly existing key) took %4.2lf milliseconds.\n", computing_time);
@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = lRUCacheGet(obj, i%10);
+ 	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  //printf("cache size 6000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
@@ -97,13 +97,13 @@ int main(int argc, char *argv[])
  counter3=0;
  counter4=0;
  #endif
- lRUCacheFree(obj);
+ LRUCacheFree(obj);
 
- obj = lRUCacheCreate(4000);
- lRUCachePut(obj, 1, 1);
+ obj = LRUCacheCreate(4000);
+ LRUCachePut(obj, 1, 1);
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	lRUCachePut(obj, (2*i)%1000, i+1);
+ 	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache size 4000, 1000000 put operations (mostly existing key) took %4.2lf milliseconds.\n", computing_time);
@@ -114,7 +114,7 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = lRUCacheGet(obj, i%10);
+ 	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache size 4000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
@@ -123,13 +123,13 @@ int main(int argc, char *argv[])
  counter3=0;
  counter4=0;
  #endif
- lRUCacheFree(obj);
+ LRUCacheFree(obj);
 
- obj = lRUCacheCreate(3000);
- lRUCachePut(obj, 1, 1);
+ obj = LRUCacheCreate(3000);
+ LRUCachePut(obj, 1, 1);
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	lRUCachePut(obj, (2*i)%1000, i+1);
+ 	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache size 3000, 1000000 put operations (mostly existing key) took %4.2lf milliseconds.\n", computing_time);
@@ -140,7 +140,7 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = lRUCacheGet(obj, i%10);
+ 	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache size 3000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
@@ -149,13 +149,13 @@ int main(int argc, char *argv[])
  counter3=0;
  counter4=0;
  #endif
- lRUCacheFree(obj);
+ LRUCacheFree(obj);
 
- obj = lRUCacheCreate(2000);
- lRUCachePut(obj, 1, 1);
+ obj = LRUCacheCreate(2000);
+ LRUCachePut(obj, 1, 1);
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	lRUCachePut(obj, (2*i)%1000, i+1);
+ 	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache size 2000, 1000000 put operations (mostly existing key) took %4.2lf milliseconds.\n", computing_time);
@@ -166,7 +166,7 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = lRUCacheGet(obj, i%10);
+ 	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache size 2000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
@@ -175,13 +175,13 @@ int main(int argc, char *argv[])
  counter3=0;
  counter4=0;
  #endif
- lRUCacheFree(obj);
+ LRUCacheFree(obj);
 
- obj = lRUCacheCreate(1000);
- lRUCachePut(obj, 1, 1);
+ obj = LRUCacheCreate(1000);
+ LRUCachePut(obj, 1, 1);
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	lRUCachePut(obj, (2*i)%1000, i+1);
+ 	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache size 1000, 1000000 put operations (mostly existing key) took %4.2lf milliseconds.\n", computing_time);
@@ -192,7 +192,7 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = lRUCacheGet(obj, i%10);
+ 	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache size 1000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
@@ -201,15 +201,15 @@ int main(int argc, char *argv[])
  counter3=0;
  counter4=0;
  #endif
- lRUCacheFree(obj);
+ LRUCacheFree(obj);
 
  printf("\n");
 
- obj = lRUCacheCreate(100);
- lRUCachePut(obj, 1, 1);
+ obj = LRUCacheCreate(100);
+ LRUCachePut(obj, 1, 1);
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	lRUCachePut(obj, (2*i)%1000, i+1);
+ 	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache size 100, 1000000 put operations (mostly new key) took %4.2lf milliseconds.\n", computing_time);
@@ -220,7 +220,7 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = lRUCacheGet(obj, i%10);
+ 	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache size 100, 1000000 get operations (mostly key not found) took %4.2lf milliseconds.\n", computing_time);
@@ -229,13 +229,13 @@ int main(int argc, char *argv[])
  counter3=0;
  counter4=0;
  #endif
- lRUCacheFree(obj);
+ LRUCacheFree(obj);
 
- obj = lRUCacheCreate(10);
- lRUCachePut(obj, 1, 1);
+ obj = LRUCacheCreate(10);
+ LRUCachePut(obj, 1, 1);
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	lRUCachePut(obj, (2*i)%1000, i+1);
+ 	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache size 10, 1000000 put operations (mostly new key) took %4.2lf milliseconds.\n", computing_time);
@@ -246,7 +246,7 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = lRUCacheGet(obj, i%10);
+ 	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache size 10, 1000000 get operations (mostly key not found) took %4.2lf milliseconds.\n", computing_time);
@@ -255,13 +255,13 @@ int main(int argc, char *argv[])
  counter3=0;
  counter4=0;
  #endif
- lRUCacheFree(obj);
+ LRUCacheFree(obj);
 
- obj = lRUCacheCreate(3);
- lRUCachePut(obj, 1, 1);
+ obj = LRUCacheCreate(3);
+ LRUCachePut(obj, 1, 1);
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	lRUCachePut(obj, (2*i)%1000, i+1);
+ 	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache size 3, 1000000 put operations (mostly new key) took %4.2lf milliseconds.\n", computing_time);
@@ -272,7 +272,7 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = lRUCacheGet(obj, i%10);
+ 	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache size 3, 1000000 get operations (mostly key not found) took %4.2lf milliseconds.\n", computing_time);
@@ -281,13 +281,13 @@ int main(int argc, char *argv[])
  counter3=0;
  counter4=0;
  #endif
- lRUCacheFree(obj);
+ LRUCacheFree(obj);
 
- obj = lRUCacheCreate(2);
- lRUCachePut(obj, 1, 1);
+ obj = LRUCacheCreate(2);
+ LRUCachePut(obj, 1, 1);
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	lRUCachePut(obj, (2*i)%1000, i+1);
+ 	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache size 2, 1000000 put operations (mostly new key) took %4.2lf milliseconds.\n", computing_time);
@@ -298,7 +298,7 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = lRUCacheGet(obj, i%10);
+ 	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache size 2, 1000000 get operations (mostly key not found) took %4.2lf milliseconds.\n", computing_time);
@@ -307,13 +307,13 @@ int main(int argc, char *argv[])
  counter3=0;
  counter4=0;
  #endif
- lRUCacheFree(obj);
+ LRUCacheFree(obj);
 
- obj = lRUCacheCreate(1);
- lRUCachePut(obj, 1, 1);
+ obj = LRUCacheCreate(1);
+ LRUCachePut(obj, 1, 1);
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	lRUCachePut(obj, (2*i)%1000, i+1);
+ 	LRUCachePut(obj, (2*i)%1000, i+1);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache size 1, 1000000 put operations (mostly new key) took %4.2lf milliseconds.\n", computing_time);
@@ -324,7 +324,7 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = lRUCacheGet(obj, i%10);
+ 	value = LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache size 1, 1000000 get operations (mostly key not found) took %4.2lf milliseconds.\n", computing_time);
@@ -333,7 +333,7 @@ int main(int argc, char *argv[])
  counter3=0;
  counter4=0;
  #endif
- lRUCacheFree(obj);
+ LRUCacheFree(obj);
  return 0;
 }
 

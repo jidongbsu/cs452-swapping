@@ -37,25 +37,25 @@ You will be completing the lru.c file. You should not modify the lru.h file.
 You are required to implement the following 4 functions.
 
 ```c
-LRUCache* lRUCacheCreate(int capacity);
+LRUCache* LRUCacheCreate(int capacity);
 ```
 
 Users call this function to create a cache whose size is *capacity*, i.e., the cache can have at most *capacity* entries. *capacity* is an integer equal to or greater than 1.
 
 ```c
-void lRUCachePut(LRUCache* obj, int key, int value);
+void LRUCachePut(LRUCache* obj, int key, int value);
 ```
 
 Users call this function to add an entry to the cache. An entry is represented by a *key-value* pair. If the key exists, then update its corresponding value. If the number of keys exceeds the capacity of cache, then evict the least recently used (LRU) entry first, before you add the new entry. This README file also refers to this function as the *put*() function.
 
 ```c
-int lRUCacheGet(LRUCache* obj, int key);
+int LRUCacheGet(LRUCache* obj, int key);
 ```
 
 Users call this function to get the entry which matches with the *key*. If such an entry does not exist, return -1. This README file also refers to this function as the *get*() function.
 
 ```c
-void lRUCacheFree(LRUCache* obj);
+void LRUCacheFree(LRUCache* obj);
 ```
 
 Users eventually will call this function to release the memory for: 1. all the entries; 2. the cache itself. This README file also refers to this function as the *cachefree*() function.
@@ -85,7 +85,7 @@ We define *LRUCache* to represent the entire cache we need to manage. To achieve
 
 - we use a doubly linked list to maintain all cache entries - each entry is represented by an instance of *struct myListNode*. A doubly linked list allows us to quickly remove a node from the front and add a node to the back, because we have a pointer *head* which points to the beginning of the list, and we keep a pointer *tail* which points to the rear end of the list. We consider the node at the beginning of the list as the least recently used entry. Any time we add a new entry or update an existing entry, we put it or move it to the back of the list.
 
-- we use a hash table to accelerate the searching as well as the updating process. In *get*, we need to search the list so as to find an entry which matches with the *key*, which is the parameter of the *get* function. In *put*, we may need to update an entry. Without a hash table, searching a doubly linked list would be an O(n) operation, and updating a random entry in the doubly linked list would also be an O(n) operation. To make it an O(1) operation, we leverage a hash table, which is why the struct *LRUCache* has a field called *hash*. In this assignment, we assume all the keys will be in between 0 to 9999. Thus the *hash* array has 10000 entries. We use *hash[0]* to track the address of entry (i.e., the node) whose key is 0, and use *hash[1]* to track the address of the entry (i.e., the node) whose key is 1, and use *hash[2]* to track the address of the entry (i.e., the node) whose key is 2, ..., and use *hash[9999]* to track the address of the entry (i.e., the node) whose key is 9999. Given that this hash table is essentially an array which tracks the address of all the entries of the cache, updating and searching an entry in the cache therefore becomes an O(1) operation.
+- we use a hash table to accelerate the searching as well as the updating process. In *get*(), we need to search the list so as to find an entry which matches with the *key*, which is the parameter of the *get*() function. In *put*, we may need to update an entry. Without a hash table, searching a doubly linked list would be an O(n) operation, and updating a random entry in the doubly linked list would also be an O(n) operation. To make it an O(1) operation, we leverage a hash table, which is why the struct *LRUCache* has a field called *hash*. In this assignment, we assume all the keys will be in between 0 to 9999. Thus the *hash* array has 10000 entries. We use *hash[0]* to track the address of entry (i.e., the node) whose key is 0, and use *hash[1]* to track the address of the entry (i.e., the node) whose key is 1, and use *hash[2]* to track the address of the entry (i.e., the node) whose key is 2, ..., and use *hash[9999]* to track the address of the entry (i.e., the node) whose key is 9999. Given that this hash table is essentially an array which tracks the address of all the entries of the cache, updating and searching an entry in the cache therefore becomes an O(1) operation.
 
 We define the struct *myListNode* to represent each entry in the doubly linked list.
 
@@ -150,11 +150,11 @@ cache size 1, 1000000 get operations (mostly key not found) took 5.08 millisecon
 ```
 
 - For cache size 10000, 8000, 4000, 3000, 2000, 1000, calling your *put*() function (1,000,000 times) should take approximately the same amount of time.
-- For cache size 100, 10, 3, 2, calling your *put*() function (100,000 times) should take approximately the same amount of time. These cases take more time than the above cases, because they mainly deal with new key situations, which may require evicting entries; whereas the above cases mainly deal with existing key situations, which do not require evicting entries.
-- For cache size 1, calling your *put*() function (100,000 times) takes less time than the above cases, but cache size 1 is a unique situation, because it does not involve any linked list operations .
+- For cache size 100, 10, 3, 2, calling your *put*() function (1,000,000 times) should take approximately the same amount of time. These cases take more time than the above cases, because they mainly deal with new key situations, which may require evicting entries; whereas the above cases mainly deal with existing key situations, which do not require evicting entries.
+- For cache size 1, calling your *put*() function (1,000,000 times) takes less time than the above cases, but cache size 1 is a unique situation, because it does not involve any linked list operations .
 
-- For cache size 10000, 4000, 3000, 2000, 1000, calling your *get*() function (100,000 times) should take approximately the same amount of the time.
-- For cache size 100, 10, 3, 2, 1, calling your *get*() function (100,000 times) should take approximately the same amount of the time. These cases take less time than the above cases, because they just return -1, but do not change the linked list; whereas the above cases require updating the linked list.
+- For cache size 10000, 4000, 3000, 2000, 1000, calling your *get*() function (1,000,000 times) should take approximately the same amount of the time.
+- For cache size 100, 10, 3, 2, 1, calling your *get*() function (1,000,000 times) should take approximately the same amount of the time. These cases take less time than the above cases, because they just return -1, but do not change the linked list; whereas the above cases require updating the linked list.
 
 ## Extra Testing
 

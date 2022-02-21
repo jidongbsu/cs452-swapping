@@ -4,18 +4,18 @@
 
 int main(int argc, char *argv[])
 {
- LRUCache* obj = lRUCacheCreate(1);
+ LRUCache* obj = LRUCacheCreate(1);
  int value;
- lRUCachePut(obj, 2, 1);
- value=lRUCacheGet(obj, 2);
+ LRUCachePut(obj, 2, 1);
+ value=LRUCacheGet(obj, 2);
  printf("what we get from the cache are [%d", value);
- lRUCachePut(obj, 3, 2);
- value = lRUCacheGet(obj, 2);
+ LRUCachePut(obj, 3, 2);
+ value = LRUCacheGet(obj, 2);
  printf(" %d", value);
- value = lRUCacheGet(obj, 3);
+ value = LRUCacheGet(obj, 3);
  printf(" %d]\n", value);
 
- lRUCacheFree(obj);
+ LRUCacheFree(obj);
  return 0;
 }
 
