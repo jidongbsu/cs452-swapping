@@ -1,6 +1,6 @@
 CC = gcc
 AR = ar
-CFLAGS = 
+CFLAGS = -Wall -Wextra -Wpointer-arith -Wstrict-prototypes -std=gnu89 -fPIC -MMD -MP
 
 LIB_OBJS = lru.a
 
