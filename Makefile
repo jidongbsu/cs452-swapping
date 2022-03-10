@@ -31,4 +31,4 @@ all: $(LIB_OBJS) $(OBJS)
 
 
 clean: 
-	rm -f *.o $(OBJS) $(LIB_OBJS)
+	rm -f *.o *.d $(OBJS) $(LIB_OBJS)

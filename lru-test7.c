@@ -12,10 +12,9 @@ double getMilliSeconds(void)
 	return (double) now.tv_sec*1000.0 + now.tv_usec/1000.0;
 }
 
-int main(int argc, char *argv[])
+int main(void)
 {
  LRUCache* obj;
- int value;
  unsigned long long i;
  double start_time;
  double computing_time;
@@ -35,7 +34,8 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = LRUCacheGet(obj, i%10);
+	/* we don't assign the get value to anyone because we don't want to use it in any way. */
+ 	LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache capacity 10000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = LRUCacheGet(obj, i%10);
+ 	LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache capacity 8000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = LRUCacheGet(obj, i%10);
+ 	LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  //printf("cache capacity 6000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
@@ -114,7 +114,7 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = LRUCacheGet(obj, i%10);
+ 	LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache capacity 4000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
@@ -140,7 +140,7 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = LRUCacheGet(obj, i%10);
+ 	LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache capacity 3000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
@@ -166,7 +166,7 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = LRUCacheGet(obj, i%10);
+ 	LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache capacity 2000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
@@ -192,7 +192,7 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = LRUCacheGet(obj, i%10);
+ 	LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache capacity 1000, 1000000 get operations (mostly key exists) took %4.2lf milliseconds.\n", computing_time);
@@ -220,7 +220,7 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = LRUCacheGet(obj, i%10);
+ 	LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache capacity 100, 1000000 get operations (mostly key not found) took %4.2lf milliseconds.\n", computing_time);
@@ -246,7 +246,7 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = LRUCacheGet(obj, i%10);
+ 	LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache capacity 10, 1000000 get operations (mostly key not found) took %4.2lf milliseconds.\n", computing_time);
@@ -272,7 +272,7 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = LRUCacheGet(obj, i%10);
+ 	LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache capacity 3, 1000000 get operations (mostly key not found) took %4.2lf milliseconds.\n", computing_time);
@@ -298,7 +298,7 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = LRUCacheGet(obj, i%10);
+ 	LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache capacity 2, 1000000 get operations (mostly key not found) took %4.2lf milliseconds.\n", computing_time);
@@ -324,7 +324,7 @@ int main(int argc, char *argv[])
  #endif
  start_time = getMilliSeconds();
  for(i=0;i<1000000;i++){
- 	value = LRUCacheGet(obj, i%10);
+ 	LRUCacheGet(obj, i%10);
  }
  computing_time = getMilliSeconds() - start_time;
  printf("cache capacity 1, 1000000 get operations (mostly key not found) took %4.2lf milliseconds.\n", computing_time);

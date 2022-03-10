@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "lru.h"
 
-int main(int argc, char *argv[])
+int main(void)
 {
  LRUCache* obj = LRUCacheCreate(1);
  int value;
@@ -23,6 +23,7 @@ int main(int argc, char *argv[])
 
 
  LRUCacheFree(obj);
+ return 0;
 }
 
 /* vim: set ts=4: */

@@ -11,9 +11,11 @@
 #include "lru.h"
 
 LRUCache* LRUCacheCreate(int capacity) {
+	return NULL;
 }
 
 int LRUCacheGet(LRUCache* obj, int key) {
+	return -1;
 }
 
 void LRUCachePut(LRUCache* obj, int key, int value) {
